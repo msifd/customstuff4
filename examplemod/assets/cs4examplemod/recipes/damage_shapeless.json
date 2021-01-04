@@ -1,5 +1,5 @@
 {
-  "type": "customstuff4:damageable_shapeless",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "minecraft:diamond"
