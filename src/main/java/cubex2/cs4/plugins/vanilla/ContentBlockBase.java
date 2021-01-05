@@ -126,6 +126,11 @@ public abstract class ContentBlockBase implements Content
         }
     }
 
+    @Nullable
+    public Item getItemInstance() {
+        return item;
+    }
+
     private void doBlockInit(ContentHelper helper)
     {
         block = createBlock();

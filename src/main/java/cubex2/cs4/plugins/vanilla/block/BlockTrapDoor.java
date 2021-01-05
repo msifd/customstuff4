@@ -24,11 +24,11 @@ public class BlockTrapDoor extends net.minecraft.block.BlockTrapDoor implements 
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         if (!content.opensWithHands)
-            return true;
+            return false;
 
         state = state.cycleProperty(OPEN);
         worldIn.setBlockState(pos, state, 2);
-        this.playSound(playerIn, worldIn, pos, ((Boolean) state.getValue(OPEN)).booleanValue());
+        this.playSound(playerIn, worldIn, pos, state.getValue(OPEN));
         return true;
     }
 

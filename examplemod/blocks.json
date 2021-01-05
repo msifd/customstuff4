@@ -366,6 +366,18 @@
       ]
     },
     {
+      "type": "block:door",
+      "entries": [
+        {
+          "id": "door",
+          "creativeTab": "examplemod",
+          "itemModel": "minecraft:acacia_door",
+          "opensWithRedstone": true,
+          "opensWithHands": false
+        }
+      ]
+    },
+    {
       "type": "block:trapDoor",
       "entries": [
         {
