@@ -59,13 +59,15 @@ public class ItemFood extends net.minecraft.item.ItemFood implements ItemWithSub
     @Override
     protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)
     {
-        WrappedPotionEffect effect = content.potionEffect.get(stack.getMetadata()).orElse(WrappedPotionEffect.of(null));
-        float probability = content.potionEffectProbability.get(stack.getMetadata()).orElse(1f);
-        PotionEffect potion = effect.getPotionEffect();
+        if (worldIn.isRemote) return;
 
-        if (!worldIn.isRemote && potion != null && worldIn.rand.nextFloat() < probability)
-        {
-            player.addPotionEffect(new PotionEffect(potion));
+        final WrappedPotionEffect[] effects = content.potionEffects.get(stack.getMetadata()).orElse(new WrappedPotionEffect[] {});
+        for (WrappedPotionEffect effect : effects) {
+            final float probability = content.potionEffectProbability.get(stack.getMetadata()).orElse(1f);
+            final PotionEffect potion = effect.getPotionEffect();
+            if (potion != null && worldIn.rand.nextFloat() < probability) {
+                player.addPotionEffect(new PotionEffect(potion));
+            }
         }
     }
 

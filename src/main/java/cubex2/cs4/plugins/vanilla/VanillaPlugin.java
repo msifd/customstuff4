@@ -55,6 +55,7 @@ public class VanillaPlugin implements CustomStuffPlugin
         registry.registerDeserializer(SoundType.class, new SoundTypeDeserializer());
         registry.registerDeserializer(IntRange.class, new IntRangeDeserializer());
         registry.registerDeserializer(WrappedPotionEffect.class, new PotionEffectDeserializer());
+        registry.registerDeserializer(WrappedPotionEffect[].class, new ArrayDeserializer<>(WrappedPotionEffectImpl[]::new, WrappedPotionEffectImpl.class));
         registry.registerDeserializer(MapColor.class, new MapColorDeserializer());
         registry.registerDeserializer(WrappedBlockState.class, new WrappedBlockStateDeserializer());
         registry.registerDeserializer(TileEntityModuleSupplier.class, new TileEntityModuleSupplierDeserializer(CustomStuff4.contentRegistry));
@@ -94,6 +95,7 @@ public class VanillaPlugin implements CustomStuffPlugin
         registry.registerDeserializer(new TypeToken<Attribute<String[]>>() {}.getType(), Attribute.deserializer(String[].class));
         registry.registerDeserializer(new TypeToken<Attribute<Boolean>>() {}.getType(), Attribute.deserializer(Boolean.class));
         registry.registerDeserializer(new TypeToken<Attribute<WrappedPotionEffect>>() {}.getType(), Attribute.deserializer(WrappedPotionEffect.class));
+        registry.registerDeserializer(new TypeToken<Attribute<WrappedPotionEffect[]>>() {}.getType(), Attribute.deserializer(WrappedPotionEffect[].class));
         registry.registerDeserializer(new TypeToken<Attribute<MapColor>>() {}.getType(), Attribute.deserializer(MapColor.class));
         registry.registerDeserializer(new TypeToken<Attribute<WrappedBlockState>>() {}.getType(), Attribute.deserializer(WrappedBlockState.class));
         registry.registerDeserializer(new TypeToken<Attribute<Color>>() {}.getType(), Attribute.deserializer(Color.class));

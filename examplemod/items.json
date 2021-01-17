@@ -85,11 +85,13 @@
             "0": false,
             "1": true
           },
-          "potionEffect": {
-            "1": {
-              "id": "minecraft:speed",
-              "duration": 120
-            }
+          "potionEffects": {
+            "1": [
+              {
+                "id": "minecraft:speed",
+                "duration": 1800
+              }
+            ]
           },
           "potionEffectProbability": 0.5,
           "result": {
