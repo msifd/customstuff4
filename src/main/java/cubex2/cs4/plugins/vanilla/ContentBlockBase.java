@@ -55,6 +55,7 @@ public abstract class ContentBlockBase implements Content
     public Attribute<BlockDrop[]> drop = Attribute.constant(null);
     public Attribute<Boolean> isFullCube = Attribute.constant(true);
     public Attribute<Boolean> isOpaqueCube = Attribute.constant(true);
+    public Attribute<Boolean> isPassable = Attribute.constant(false);
     public Attribute<Boolean> canInteractWithFluidItem = Attribute.constant(true);
     public Attribute<Boolean> isBurning = Attribute.constant(false);
     public Attribute<AxisAlignedBB> bounds = Attribute.constant(BlockMixin.DEFAULT_AABB_MARKER);

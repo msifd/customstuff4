@@ -127,6 +127,11 @@ public abstract class BlockMixin extends Block implements CSBlock<ContentBlockBa
     }
 
     @Override
+    public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+        return getContent().isPassable.get(0).orElse(super.isPassable(worldIn, pos));
+    }
+
+    @Override
     public BlockRenderLayer getBlockLayer()
     {
         BlockRenderLayer layer = getContent().renderLayer;

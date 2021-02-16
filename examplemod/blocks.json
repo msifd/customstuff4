@@ -163,6 +163,42 @@
           "material": "iron",
           "itemModel": "cs4examplemod:horizontal_0",
           "hardness": 1
+        },
+        {
+          "id": "directional_slab",
+          "creativeTab": "examplemod",
+          "material": "iron",
+          "itemModel": "cs4examplemod:directional_slab",
+          "hardness": 1,
+          "faceBySide": true,
+          "isPassable": false,
+          "isFullCube": false,
+          "isOpaqueCube": false,
+          "opacity": 0,
+          "bounds": {
+            "0": { "from": [0, 0.8125, 0], "to": [1, 1, 1] },
+            "1": { "from": [0, 0, 0], "to": [1, 0.1875, 1] },
+            "2": { "from": [0, 0, 0.8125], "to": [1, 1, 1] },
+            "3": { "from": [0, 0, 0], "to": [1, 1, 0.1875] },
+            "4": { "from": [0.8125, 0, 0], "to": [1, 1, 1] },
+            "5": { "from": [0, 0, 0], "to": [0.1875, 1, 1] }
+          },
+          "selectionBounds": {
+            "0": { "from": [0, 0.8125, 0], "to": [1, 1, 1] },
+            "1": { "from": [0, 0, 0], "to": [1, 0.1875, 1] },
+            "2": { "from": [0, 0, 0.8125], "to": [1, 1, 1] },
+            "3": { "from": [0, 0, 0], "to": [1, 1, 0.1875] },
+            "4": { "from": [0.8125, 0, 0], "to": [1, 1, 1] },
+            "5": { "from": [0, 0, 0], "to": [0.1875, 1, 1] }
+          },
+          "collisionBounds": {
+            "0": { "from": [0, 0.8125, 0], "to": [1, 1, 1] },
+            "1": { "from": [0, 0, 0], "to": [1, 0.1875, 1] },
+            "2": { "from": [0, 0, 0.8125], "to": [1, 1, 1] },
+            "3": { "from": [0, 0, 0], "to": [1, 1, 0.1875] },
+            "4": { "from": [0.8125, 0, 0], "to": [1, 1, 1] },
+            "5": { "from": [0, 0, 0], "to": [0.1875, 1, 1] }
+          }
         }
       ]
     },

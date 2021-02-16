@@ -1,6 +1,5 @@
 package cubex2.cs4.plugins.vanilla.block;
 
-import cubex2.cs4.plugins.vanilla.ContentBlockOrientable;
 import cubex2.cs4.plugins.vanilla.ContentBlockOrientableDirectional;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -20,6 +19,11 @@ public abstract class BlockOrientableDirectional extends BlockOrientable
         super(material, content);
 
         setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+    }
+
+    @Override
+    public int getSubtype(IBlockState state) {
+        return state.getValue(FACING).getIndex();
     }
 
     @Override
