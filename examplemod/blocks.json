@@ -41,6 +41,16 @@
           "isOpaqueCube": false
         },
         {
+          "id": "glassy",
+          "creativeTab": "examplemod",
+          "material": "iron",
+          "hardness": 0.3,
+          "renderLayer": "cutout",
+          "isFullCube": false,
+          "isOpaqueCube": false,
+          "hideAdjacentSides": true
+        },
+        {
           "id": "mob_shield",
           "creativeTab": "examplemod",
           "material": "circuits",

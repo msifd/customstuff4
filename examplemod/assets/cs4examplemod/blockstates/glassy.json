@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "cs4examplemod:glassy" },
+        "inventory": {"model": "cs4examplemod:glassy"}
+    }
+}

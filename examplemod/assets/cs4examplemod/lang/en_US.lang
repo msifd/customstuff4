@@ -62,6 +62,9 @@ tile.cs4examplemod.pane.1.name=Pane 1
 tile.cs4examplemod.pane_no_subtype.name=Pane
 tile.cs4examplemod.pressure_plate.name=Pressure Plate
 tile.cs4examplemod.stairs_someblock.name=Iron Sensor Stairs
+tile.cs4examplemod.glassy.name=Glassy
+tile.cs4examplemod.directional_slab.name=Directional Slab
+
 fluid.examplefluid=Example Fluid
 itemGroup.examplemod=CS4 Example Mod
 

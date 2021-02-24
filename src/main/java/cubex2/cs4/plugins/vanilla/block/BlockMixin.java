@@ -16,6 +16,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -34,6 +35,8 @@ import net.minecraftforge.common.property.IUnlistedProperty;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import org.apache.commons.lang3.ArrayUtils;
@@ -475,5 +478,20 @@ public abstract class BlockMixin extends Block implements CSBlock<ContentBlockBa
         {
             return new BlockStateContainer(this, ContentBlockBaseWithSubtypes.insertSubtype(superProperties));
         }
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
+        if (getContent().hideAdjacentSides.get(0).orElse(false)) {
+            final IBlockState offState = blockAccess.getBlockState(pos.offset(side));
+            if (blockState != offState) {
+                return true;
+            }
+            if (offState.getBlock() == this) {
+                return false;
+            }
+        }
+        return super.shouldSideBeRendered(blockState, blockAccess, pos, side);
     }
 }
