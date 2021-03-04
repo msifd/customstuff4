@@ -425,6 +425,18 @@
       ]
     },
     {
+      "type": "block:slidingDoor",
+      "entries": [
+        {
+          "id": "slidingdoor",
+          "creativeTab": "examplemod",
+          "itemModel": "minecraft:jungle_door",
+          "opensWithRedstone": true,
+          "opensWithHands": true
+        }
+      ]
+    },
+    {
       "type": "block:trapDoor",
       "entries": [
         {
