@@ -363,6 +363,7 @@
             "item": "minecraft:snowball",
             "amount": 2
           },
+          "material": "grass",
           "maxLight": 15,
           "hardness": 1
         }

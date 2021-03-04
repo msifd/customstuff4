@@ -8,6 +8,9 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodNode;
 
+import java.lang.reflect.Field;
+import java.util.stream.Stream;
+
 
 public class BlockFactory
 {
@@ -127,7 +130,9 @@ public class BlockFactory
 
     public static Block createSnow(ContentBlockSnow content)
     {
-        return newInstance(snowClass, content);
+        final Block block = newInstance(snowClass, content);
+        setMaterial(block, content.material);
+        return block;
     }
 
     public static Block createFenceGate(ContentBlockFenceGate content)
@@ -188,6 +193,19 @@ public class BlockFactory
         } catch (Exception e)
         {
             throw new RuntimeException(e);
+        }
+    }
+
+    private static void setMaterial(Block block, Material material) {
+        final Field materialField = Stream.of(Block.class.getDeclaredFields())
+                .filter(f -> f.getType() == Material.class)
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("cant find Block material field"));
+        try {
+            materialField.setAccessible(true);
+            materialField.set(block, material);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
