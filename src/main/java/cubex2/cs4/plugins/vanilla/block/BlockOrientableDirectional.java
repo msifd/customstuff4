@@ -27,6 +27,11 @@ public abstract class BlockOrientableDirectional extends BlockOrientable
     }
 
     @Override
+    public int damageDropped(IBlockState state) {
+        return 0;
+    }
+
+    @Override
     protected PropertyDirection getFacingProperty()
     {
         return FACING;
