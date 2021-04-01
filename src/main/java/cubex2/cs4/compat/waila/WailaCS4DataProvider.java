@@ -22,11 +22,11 @@ public class WailaCS4DataProvider implements IWailaDataProvider
         Block block = accessor.getBlock();
         if (block instanceof CSBlock)
         {
-            CSBlock csBlock = (CSBlock) block;
+            CSBlock<?> csBlock = (CSBlock<?>) block;
             return new ItemStack(block, 1, csBlock.getSubtype(accessor.getBlockState()));
         }
 
-        return null;
+        return ItemStack.EMPTY;
     }
 
     @Override
