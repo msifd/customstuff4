@@ -7,6 +7,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
@@ -110,7 +111,9 @@ public class BlockSlidingDoor extends BlockDoor implements CSBlock<ContentBlockS
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return content.getItemInstance();
+        return state.getValue(HALF) == EnumDoorHalf.UPPER
+                ? Items.AIR
+                : content.getItemInstance();
     }
 
     @Override
