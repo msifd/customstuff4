@@ -66,7 +66,7 @@ public abstract class BlockOrientable extends BlockSimple
 
     protected final EnumFacing getDirectionalFacingForPlacement(BlockPos pos, EnumFacing facing, int meta, EntityLivingBase placer)
     {
-        if (content.faceBySide.get(meta).orElse(false))
+        if (!placer.isSneaking() && content.faceBySide.get(meta).orElse(false))
             return facing;
         else
             return EnumFacing.getDirectionFromEntityLiving(pos, placer);
