@@ -25,7 +25,7 @@ repositories {
     }
 }
 
-version = "1.12.2-0.6.8"
+version = "1.12.2-0.6.9"
 group = "cubex2.cs4"
 archivesBaseName = "customstuff4"
 
