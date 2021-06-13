@@ -28,7 +28,7 @@ public abstract class BlockOrientable extends BlockSimple
         return new IProperty[] {getFacingProperty()};
     }
 
-    protected abstract PropertyDirection getFacingProperty();
+    public abstract PropertyDirection getFacingProperty();
 
     @Override
     public int getSubtype(IBlockState state)

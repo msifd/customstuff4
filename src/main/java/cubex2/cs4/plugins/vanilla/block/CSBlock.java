@@ -6,9 +6,13 @@ import net.minecraft.block.state.IBlockState;
 
 public interface CSBlock<T extends ContentBlockBase>
 {
-    int getSubtype(IBlockState state);
-
     T getContent();
+
+    default boolean hasSubtypes() {
+        return false;
+    }
+
+    int getSubtype(IBlockState state);
 
     default int[] getSubtypes()
     {

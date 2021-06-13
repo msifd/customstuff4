@@ -21,6 +21,11 @@ public abstract class BlockOrientableVertical extends BlockOrientable
     }
 
     @Override
+    public boolean hasSubtypes() {
+        return false;
+    }
+
+    @Override
     public int getSubtype(IBlockState state) {
         return state.getValue(FACING).getIndex();
     }
@@ -31,7 +36,7 @@ public abstract class BlockOrientableVertical extends BlockOrientable
     }
 
     @Override
-    protected PropertyDirection getFacingProperty()
+    public PropertyDirection getFacingProperty()
     {
         return FACING;
     }

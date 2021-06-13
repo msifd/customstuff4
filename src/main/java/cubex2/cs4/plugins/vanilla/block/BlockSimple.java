@@ -19,6 +19,11 @@ public abstract class BlockSimple extends Block implements CSBlock<ContentBlockS
     }
 
     @Override
+    public boolean hasSubtypes() {
+        return true;
+    }
+
+    @Override
     public int getSubtype(IBlockState state)
     {
         return getMetaFromState(state);

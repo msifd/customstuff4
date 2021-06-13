@@ -15,6 +15,11 @@ public class BlockPane extends net.minecraft.block.BlockPane implements CSBlock<
     }
 
     @Override
+    public boolean hasSubtypes() {
+        return true;
+    }
+
+    @Override
     public int getSubtype(IBlockState state)
     {
         return getMetaFromState(state);

@@ -80,6 +80,11 @@ public class BlockWall extends Block implements CSBlock<ContentBlockWall>
     }
 
     @Override
+    public boolean hasSubtypes() {
+        return true;
+    }
+
+    @Override
     public int[] getSubtypes()
     {
         return content.subtypes;

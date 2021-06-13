@@ -87,6 +87,11 @@ public abstract class BlockCarpet extends Block implements CSBlock<ContentBlockC
     }
 
     @Override
+    public boolean hasSubtypes() {
+        return true;
+    }
+
+    @Override
     public int getSubtype(IBlockState state)
     {
         return getMetaFromState(state);

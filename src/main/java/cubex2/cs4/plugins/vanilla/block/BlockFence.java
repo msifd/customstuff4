@@ -17,6 +17,11 @@ public class BlockFence extends net.minecraft.block.BlockFence implements CSBloc
     }
 
     @Override
+    public boolean hasSubtypes() {
+        return true;
+    }
+
+    @Override
     public int getSubtype(IBlockState state)
     {
         return getMetaFromState(state);

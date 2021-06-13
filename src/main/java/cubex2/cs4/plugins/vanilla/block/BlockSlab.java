@@ -120,6 +120,11 @@ public abstract class BlockSlab extends Block implements CSBlock<ContentBlockSla
     }
 
     @Override
+    public boolean hasSubtypes() {
+        return true;
+    }
+
+    @Override
     public int getSubtype(IBlockState state)
     {
         return 0;

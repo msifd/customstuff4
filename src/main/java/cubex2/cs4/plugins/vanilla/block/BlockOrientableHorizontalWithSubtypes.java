@@ -20,7 +20,7 @@ public abstract class BlockOrientableHorizontalWithSubtypes extends BlockOrienta
     }
 
     @Override
-    protected PropertyDirection getFacingProperty()
+    public PropertyDirection getFacingProperty()
     {
         return FACING;
     }

@@ -12,6 +12,7 @@ public class CompatWaila
         for (Class block : WailaData.stackProviderBlocks)
         {
             registrar.registerStackProvider(provider, block);
+            registrar.registerTailProvider(provider, block);
         }
 
         WailaData.stackProviderBlocks.clear();
